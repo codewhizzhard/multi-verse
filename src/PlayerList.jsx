@@ -3,7 +3,6 @@ import DataContext from "./context/contextProvider"
 import { FaExclamationCircle, FaStar, FaCrown } from "react-icons/fa"
 import { motion } from "framer-motion"
 import points from "./points"
-import { useLocation } from "react-router-dom"
 const pageVariants = {
     hidden: {
         opacity: 0,
@@ -44,7 +43,6 @@ const PlayerList = () => {
 
 
    const { players, loading, error, issue } = useContext(DataContext)
-   const location = useLocation()
    const playerRef = useRef("")
 
    
@@ -59,18 +57,18 @@ const PlayerList = () => {
         <ul className="flex justify-between" >
             <li className="pl-4">No</li>
             <li>Name</li>
-            <li className="sm:block hidden">Points</li>
-            <li className="items-center flex text-center pr-6">Rank</li>
+            <li className="hidden sm:block">Points</li>
+            <li className="flex items-center pr-6 text-center">Rank</li>
         </ul>
         <hr />
-    {loading && error ? (<p className="text-red-700 p-2">{issue && <span className="pl-4"><FaExclamationCircle className="inline w-5 h-5"/> <em className="pl-1">{issue}</em></span>}</p> ): loading && !error ? (<p>Loading...</p>) : (
+    {loading && error ? (<p className="p-2 text-red-700">{issue && <span className="pl-4"><FaExclamationCircle className="inline w-5 h-5"/> <em className="pl-1">{issue}</em></span>}</p> ): loading && !error ? (<p>Loading...</p>) : (
         players && players.map((player) => (
             <ol className="pt-2">
                 {/* limiting the amount of players to 5 */}
                     <motion.li className="flex justify-between p-2 list-decimal" variants={listPlayerVariants} key={player.id}>
                         <p className="block">{player.id}</p>
                         <p className=" w-36">{player.name}</p>
-                            <p className="sm:flex hidden w-24 ">{ player.id === 6 ? player.id = 2 : player.id === 2 ? points["legends"] : player.id === 10 ? player.id = 3 : player.id === 3 ? points["pro"] : player.id < 10 && player.id > 4 ? player.id = 4 : player.id === 4 ? points["star"] : points["king"]}
+                            <p className="hidden w-24 sm:flex ">{ player.id === 6 ? player.id = 2 : player.id === 2 ? points["legends"] : player.id === 10 ? player.id = 3 : player.id === 3 ? points["pro"] : player.id < 10 && player.id > 4 ? player.id = 4 : player.id === 4 ? points["star"] : points["king"]}
                             </p>
                             <p className={player.id === 1 ? "text-white" : player.id === 2 ? "text-red-700" : player.id ===3 ? "text-gray-700" : "text-black"}>{[...Array(player.id === 6 ? player.id = 2 : player.id === 10 ? player.id = 3 : player.id < 10 && player.id > 4 ? player.id = 4 : player.id)].map((e, i) => (<span key={i}>{player.id <= 3 ? <FaCrown /> : <FaStar />}</span>))}</p>
                         </motion.li>
