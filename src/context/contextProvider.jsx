@@ -49,42 +49,47 @@ export const DataProvider = ({ children }) => {
             setLoad(true)
             try {
                 const request = await api.get(`/products?offset=${0}&limit=${limit}`)
-                // *! blogs
-                const blogsRequest = await api.get(`/blog-posts?offset=${0}&limit=${max}`)
-                // *! photos
-                const photosRequest = await api.get(`/photos?offset=${0}&limit=${peak}`)
                 const products = request.data.products
-                const blogs = blogsRequest.data.blogs
-                const photos = photosRequest.data.photos
                 setProducts(products)
-                setBlogs(blogs)
-                setPhotos(photos)
                 setLoad(false)
-                /* console.log(photos)
                 console.log(products)
-                console.log(blogs) */
             } catch(err) {
                 setErr(err)
             }
         }
         fetchProducts()
-    }, [limit, max, peak])
+    }, [limit])
 
-   /*   All is now in one
+    
     useEffect(() => {
         const fetchBlogs =  async() => {
             setLoad(true)
             try {
-                
-                
-                
+                const blogsRequest = await api.get(`/blog-posts?offset=${0}&limit=${max}`)
+                const blogs = blogsRequest.data.blogs
+                setBlogs(blogs)
                 setLoad(false)
             } catch(err) {
                 setErr(err)
             }
         }
         fetchBlogs()
-    }, [max]) */
+    }, [max])
+
+    useEffect(() => {
+        const fetchPhotos =  async() => {
+            setLoad(true)
+            try {
+                const photosRequest = await api.get(`/photos?offset=${0}&limit=${peak}`)
+                const photos = photosRequest.data.photos
+                setPhotos(photos)
+                setLoad(false)
+            } catch(err) {
+                setErr(err)
+            }
+        }
+        fetchPhotos()
+    }, [peak])
 
     const levels = ["OBTAIN KINGSHIP", "LEGENDARY", "PRO", "BECOME A STAR"]
     const details = ["digital", "physical"]

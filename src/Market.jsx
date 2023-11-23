@@ -56,25 +56,25 @@ export default Market
 
 // *! this was the first pattern of solving it, but it is not of a good performance
 /* category === details[0] ?
-                    product.category === category &&
-                        <ul>
-                            <li className="relative" key={product.id}>
-                                <img src={product.photo_url} alt={product.id} className="rounded-full w-72 h-72" width="72" height="72" title={product.description}/>
-                                <p className="absolute bottom-2 right-32">{product.category}</p>
-                            </li>
-                        </ul>
-                 : category === details[1] ? 
-                    product.category === category && 
-                    <ul>
-                        <li className="relative" key={product.id}>
-                            <img src={product.photo_url} alt={product.id} className="rounded-full w-72 h-72" width="72" height="72" title={product.description}/>
-                            <p className="absolute bottom-2 right-32">{product.category}</p>
-                        </li>
-                    </ul> : 
-                        <ul>
-                        <li className="relative" key={product.id}>
-                            <img src={product.photo_url} alt={product.id} className="rounded-full w-72 h-72" width="72" height="72" title={product.description}/>
-                            <p className="absolute bottom-2 right-32">{product.category}</p>
-                        </li>
-                    </ul>
-                    }  */
+product.category === category &&
+    <ul>
+        <li className="relative" key={product.id}>
+            <img src={product.photo_url} alt={product.id} className="rounded-full w-72 h-72" width="72" height="72" title={product.description}/>
+            <p className="absolute bottom-2 right-32">{product.category}</p>
+        </li>
+    </ul>
+: category === details[1] ? 
+product.category === category && 
+<ul>
+    <li className="relative" key={product.id}>
+        <img src={product.photo_url} alt={product.id} className="rounded-full w-72 h-72" width="72" height="72" title={product.description}/>
+        <p className="absolute bottom-2 right-32">{product.category}</p>
+    </li>
+</ul> : 
+    <ul>
+    <li className="relative" key={product.id}>
+        <img src={product.photo_url} alt={product.id} className="rounded-full w-72 h-72" width="72" height="72" title={product.description}/>
+        <p className="absolute bottom-2 right-32">{product.category}</p>
+    </li>
+</ul>
+}  */
