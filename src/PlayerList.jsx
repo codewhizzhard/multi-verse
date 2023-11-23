@@ -43,15 +43,13 @@ const PlayerList = () => {
 
 
    const { players, loading, error, issue } = useContext(DataContext)
-   const playerRef = useRef("")
-
+   /* const playerRef = useRef("")
    
-
     useEffect(() => {
         players.map((player) => playerRef.current = player.id)
         
 
-    }, [players.map((player) => player.id)])
+    }, [players.map((player) => player.id)]) */
   return (
     <motion.main className="bg-red-400" variants={pageVariants} initial="hidden" animate="visible" exit="exit">
         <ul className="flex justify-between" >

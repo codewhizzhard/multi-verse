@@ -2,7 +2,6 @@ import { Routes, Route } from "react-router-dom"
 import Layout from "./Layout"
 import Home from "./Home"
 import PlayerList from "./PlayerList"
-import { AnimatePresence } from "framer-motion"
 import Game from "./Game"
 import Blogs from "./Blogs"
 import Traffic from "./Traffic"
@@ -11,6 +10,7 @@ import BlogPosts from "./BlogPosts"
 import About from "./About"
 import Contact from "./Contact"
 import Missing from "./Missing"
+import { AnimatePresence } from "framer-motion"
 
 function App() {
 
