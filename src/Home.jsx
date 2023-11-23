@@ -104,7 +104,7 @@ const Home = () => {
                 <div className="flex justify-between py-4">
                     <p>TOP PLAYERS</p>
                     <Link to={"playerlist"}>
-                        <p className="pr-4">view all <FaArrowRight className="inline w-3 h-3 text-gray-600" /></p>
+                        <p className="pr-4 hover:text-blue-600">view all <FaArrowRight className="inline w-3 h-3 text-gray-600 hover:text-blue-600" /></p>
                     </Link>
                 </div>
                 <ul className="flex justify-between" >
