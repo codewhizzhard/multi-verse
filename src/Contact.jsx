@@ -1,5 +1,5 @@
 import { motion } from "framer-motion"
-import PlayerList from "./playerList"
+
 
 const pageVariants = {
     hidden: {
