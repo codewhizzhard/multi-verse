@@ -84,6 +84,7 @@ export const DataProvider = ({ children }) => {
                 const photos = photosRequest.data.photos
                 setPhotos(photos)
                 setLoad(false)
+                console.log(photos)
             } catch(err) {
                 setErr(err)
             }

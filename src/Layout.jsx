@@ -99,15 +99,16 @@ const Layout = () => {
     const [val, setVal] = useState(10);
     const [ai, setAi] = useState(true);
     const loadRef = useRef()
+    const inputRef = useRef()
 
     useEffect(() => {
         loadRef.current = val
     }, [val])
     
-     // not longer in use
-    /* useEffect(() => {
-        //inputRef.current.focus()
-    }, []) */
+     ////// not longer in use
+    useEffect(() => {
+        inputRef.current.focus()
+    }, [])
 
     const location = useLocation()
     // delete it later
