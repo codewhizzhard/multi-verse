@@ -99,16 +99,11 @@ const Layout = () => {
     const [val, setVal] = useState(10);
     const [ai, setAi] = useState(true);
     const loadRef = useRef()
-    const inputRef = useRef()
 
     useEffect(() => {
         loadRef.current = val
     }, [val])
     
-     ////// not longer in use
-    useEffect(() => {
-        inputRef.current.focus()
-    }, [])
 
     const location = useLocation()
     // delete it later
@@ -163,7 +158,7 @@ const Layout = () => {
                                 </section>
                                 <form onSubmit={(e) => e.preventDefault()}>
                                     <label htmlFor="limit" className="block pb-2">SET PRODUCTS LIMITS</label>
-                                    <input type="number" id="limit" value={val} onChange={(e) => setVal(e.target.value)} min={limit} max={1000} className="w-3/4 " ref={inputRef}/>
+                                    <input type="number" id="limit" value={val} onChange={(e) => setVal(e.target.value)} min={limit} max={1000} className="w-3/4 "/>
                                     <button type="submit" onClick={() => setLimit(val)} className="block w-full pt-2">{loadRef.current === 10 ? "load more" : val > loadRef.current ? <span>Load more <FaLongArrowAltUp className="inline h-5 pb-1"/></span> : <span>Load less <FaLongArrowAltDown className="inline h-5 pb-1"/></span>}</button>
                                 </form>
                                 <AnimatePresence>
@@ -198,7 +193,7 @@ const Layout = () => {
                                 </section>
                                 <form onSubmit={(e) => e.preventDefault()}>
                                     <label htmlFor="max" className="block pb-2">SET POSTS LIMITS</label>
-                                    <input type="number" id="max" value={val} onChange={(e) => setVal(e.target.value)} min={max} max={1000} className="w-3/4 " ref={inputRef}/>
+                                    <input type="number" id="max" value={val} onChange={(e) => setVal(e.target.value)} min={max} max={1000} className="w-3/4 "/>
                                     <button type="submit" onClick={() => setMax(val)} className="block w-full pt-2">{loadRef.current === 10 ? "load more" : val > loadRef.current ? <span>Load more <FaLongArrowAltUp className="inline h-5 pb-1"/></span> : <span>Load less <FaLongArrowAltDown className="inline h-5 pb-1"/></span>}</button>
                                 </form>
                                 <AnimatePresence>
@@ -225,7 +220,7 @@ const Layout = () => {
                                 </div>
                                 <form onSubmit={(e) => e.preventDefault()}>
                                     <label htmlFor="peak" className="block pb-2">SET POSTS LIMITS</label>
-                                    <input type="number" id="max" value={val} onChange={(e) => setVal(e.target.value)} min={peak} max={1000} className="w-3/4 " ref={inputRef}/>
+                                    <input type="number" id="max" value={val} onChange={(e) => setVal(e.target.value)} min={peak} max={1000} className="w-3/4 "/>
                                     <button type="submit" onClick={() => setPeak(val)} className="block w-full pt-2">{loadRef.current === 10 ? "load more" : val > loadRef.current ? <span>Load more <FaLongArrowAltUp className="inline h-5 pb-1"/></span> : <span>Load less <FaLongArrowAltDown className="inline h-5 pb-1"/></span>}</button>
                                 </form>
                                 <AnimatePresence>
@@ -269,7 +264,7 @@ const Layout = () => {
                             </ul>
                             <form onSubmit={(e) => e.preventDefault()}>
                                 <label htmlFor="max" className="block pb-2">SET POSTS LIMITS</label>
-                                <input type="number" id="max" value={val} onChange={(e) => setVal(e.target.value)} min={max} max={1000} className="w-3/4 " ref={inputRef}/>
+                                <input type="number" id="max" value={val} onChange={(e) => setVal(e.target.value)} min={max} max={1000} className="w-3/4 "/>
                                 <button type="submit" onClick={() => setMax(val)} className="block w-full pt-2">{loadRef.current === 10 ? "load more" : val > loadRef.current ? <span>Load more <FaLongArrowAltUp className="inline h-5 pb-1"/></span> : <span>Load less <FaLongArrowAltDown className="inline h-5 pb-1"/></span>}</button>
                                 </form>
                         </section>
@@ -284,7 +279,7 @@ const Layout = () => {
                             </ul>
                             <form onSubmit={(e) => e.preventDefault()}>
                                 <label htmlFor="max" className="block pb-2">SET POSTS LIMITS</label>
-                                <input type="number" id="max" value={val} onChange={(e) => setVal(e.target.value)} min={max} max={1000} className="w-3/4 " ref={inputRef}/>
+                                <input type="number" id="max" value={val} onChange={(e) => setVal(e.target.value)} min={max} max={1000} className="w-3/4 " />
                                 <button type="submit" onClick={() => setMax(val)} className="block w-full pt-2">{loadRef.current === 10 ? "load more" : val > loadRef.current ? <span>Load more <FaLongArrowAltUp className="inline h-5 pb-1"/></span> : <span>Load less <FaLongArrowAltDown className="inline h-5 pb-1"/></span>}</button>
                             </form>
                         </section>
